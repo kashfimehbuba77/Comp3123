@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 // TODO - Update your mongoDB Atals Url here to Connect to the database
-const DB_URL = process.env.DB_URL || "";
+const DB_URL = process.env.DB_URL || "mongodb+srv://admin:password123%21@cluster0.tqloabq.mongodb.net/Comp3123_Lab_Exec06?retryWrites=true&w=majority&appName=Cluster0";
 const PORT = process.env.PORT || 8081;
 
 const app = express();
@@ -21,7 +21,7 @@ mongoose.connect(DB_URL, {
 }).then(() => {
     console.log("Successfully connected to the database mongoDB Atlas Server");    
     app.listen(PORT, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port 8081");
 });
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
