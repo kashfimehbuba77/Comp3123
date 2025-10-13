@@ -1,4 +1,5 @@
 const express = require('express');
+const noteRoutes = require('./routes/NoteRoutes');
 const mongoose = require('mongoose');
 
 // TODO - Update your mongoDB Atals Url here to Connect to the database
@@ -10,8 +11,14 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.use("/api/v1", noteRoutes)
+
 app.get('/', (req, res) => {
     res.send("<h1>Welcome to Note taking application - Week06 Exercise</h1>");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
 
 // Connect to the database
