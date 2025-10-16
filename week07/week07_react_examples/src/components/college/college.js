@@ -1,24 +1,18 @@
-// function College() {
-//     return <h1>College: George Brown College, Toronto</h1>
-// }
-
-import React from "react";
+import React from 'react';
 
 class College extends React.Component {
-    constructor(){
-        super()
-        this.props = {
+  constructor() {
+    super();
+    this.state = {
+      x: 100,
+      name: "Kashfi",
+    };
+  }
 
-        }
-
-        this.state = {
-            x:100,
-            name:" Kashfi"
-        }
-    }
-    render() {
-        return <h1>College: George Brown College, Toronto</h1>
-    }
+  render() {
+    const collegeStyle = { fontSize: 13}; 
+    return <h1 style={collegeStyle}>George Brown College, Toronto</h1>;
+  }
 }
 
-export default College
+export default College;
